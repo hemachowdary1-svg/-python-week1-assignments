@@ -1,13 +1,15 @@
-# Simple ATM Simulator using Functions
+# Simple ATM Simulator
 
 balance = 5000
 correct_pin = "1234"
 
 
+# Function to check balance
 def check_balance():
     print("Current Balance: ₹", balance)
 
 
+# Function to deposit money
 def deposit():
     global balance
 
@@ -17,16 +19,17 @@ def deposit():
         balance += amount
         print("₹", amount, "deposited successfully.")
     else:
-        print("Invalid amount.")
+        print("Invalid deposit amount.")
 
 
+# Function to withdraw money
 def withdraw():
     global balance
 
     amount = float(input("Enter withdrawal amount: ₹"))
 
     if amount <= 0:
-        print("Invalid amount.")
+        print("Invalid withdrawal amount.")
 
     elif amount > balance:
         print("Insufficient balance.")
@@ -36,6 +39,7 @@ def withdraw():
         print("₹", amount, "withdrawn successfully.")
 
 
+# PIN-based login
 print("===== SIMPLE ATM =====")
 
 pin = input("Enter your PIN: ")
@@ -45,7 +49,8 @@ if pin == correct_pin:
     print("\nLogin Successful!")
 
     while True:
-        print("\n--- ATM MENU ---")
+
+        print("\n===== ATM MENU =====")
         print("1. Check Balance")
         print("2. Deposit")
         print("3. Withdraw")
